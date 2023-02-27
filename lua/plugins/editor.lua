@@ -5,6 +5,10 @@ return {
     enabled = false,
   },
   {
+    "mizlan/iswap.nvim",
+    event = "VeryLazy",
+  },
+  {
     "windwp/nvim-autopairs",
     dependencies = { "nvim-treesitter/nvim-treesitter", "hrsh7th/nvim-cmp" },
     config = function()
