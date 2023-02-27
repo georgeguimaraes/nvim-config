@@ -17,7 +17,8 @@ return {
             buftype = { "terminal" },
           },
         },
-        other_win_hl_color = "#e35e4f",
+        current_win_hl_color = "#7aa2f7",
+        other_win_hl_color = "#7aa2f7",
       })
     end,
   },
