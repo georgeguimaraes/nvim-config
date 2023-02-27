@@ -1,5 +1,4 @@
 return {
-  { "tpope/vim-unimpaired", event = "VeryLazy" },
   {
     "echasnovski/mini.pairs",
     enabled = false,
@@ -41,4 +40,8 @@ return {
       end
     end,
   },
+  {
+    "echasnovski/mini.bracketed",
+    version = false,
+    event = "VeryLazy",
 }
