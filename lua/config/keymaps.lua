@@ -31,5 +31,11 @@ end, { desc = "Pick a window" })
 set("n", "<leader>cs", "<cmd>ISwapWith", { desc = "Swap cursor with ..." })
 set("n", "<leader>ga", "<cmd>GitCoAuthors", { desc = "Add Co-Authors" })
 
+local wk = require("which-key")
+wk.register({ ["<leader>cj"] = { name = "Code Split/Join" } })
+set("n", "<leader>cjm", "<cmd>TSJToggle<CR>", { desc = "Split/Join code block with autodetect" })
+set("n", "<leader>cjj", "<cmd>TSJJoin<CR>", { desc = "Join code block" })
+set("n", "<leader>cjs", "<cmd>TSJSplit<CR>", { desc = "Split code block" })
+
 set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Empty line above" })
 set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Empty line below" })
