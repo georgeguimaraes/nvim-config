@@ -27,7 +27,9 @@ set("n", "\\", function()
   }) or vim.api.nvim_get_current_win()
   vim.api.nvim_set_current_win(picked_window_id)
 end, { desc = "Pick a window" })
+
 set("n", "<leader>cs", "<cmd>ISwapWith", { desc = "Swap cursor with ..." })
+set("n", "<leader>ga", "<cmd>GitCoAuthors", { desc = "Add Co-Authors" })
 
 set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Empty line above" })
 set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Empty line below" })
