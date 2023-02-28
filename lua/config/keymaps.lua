@@ -15,8 +15,7 @@ set("n", ",8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Buffer 8" })
 set("n", ",9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Buffer 9" })
 set("n", ",0", "<cmd>BufferLineGoToBuffer 0<cr>", { desc = "Buffer 0" })
 
-set("n", "<leader><tab><tab>", "<cmd>tablast<cr>", { desc = "Last tab" })
-set("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New tab" })
+set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
 set("n", "<leader>wq", "<cmd>q<cr>", { desc = "Quit window" })
 
