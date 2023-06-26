@@ -6,5 +6,5 @@
 vim.opt.timeoutlen = 150
 
 if vim.g.neovide then
-  vim.opt.guifont = "Hack Nerd Font Mono:h18"
+  vim.opt.guifont = "FiraCodeGG Nerd Font:h16"
 end

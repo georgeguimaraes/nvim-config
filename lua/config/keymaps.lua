@@ -14,6 +14,7 @@ set("n", ",7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Buffer 7" })
 set("n", ",8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Buffer 8" })
 set("n", ",9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Buffer 9" })
 set("n", ",0", "<cmd>BufferLineGoToBuffer 0<cr>", { desc = "Buffer 0" })
+set("n", ",l", "<cmd>e#<cr>", { desc = "Last Buffer" })
 
 set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
@@ -38,3 +39,10 @@ set("n", "<leader>cjs", "<cmd>TSJSplit<CR>", { desc = "Split code block" })
 
 set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Empty line above" })
 set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Empty line below" })
+
+set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
+set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
+
+set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
+set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
+set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find Git Files (root dir)" })
