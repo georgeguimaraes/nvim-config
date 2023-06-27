@@ -42,6 +42,8 @@ set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR
 
 set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
 set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
+set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
+set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
 
 set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
