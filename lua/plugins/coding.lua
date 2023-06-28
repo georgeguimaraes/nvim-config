@@ -75,14 +75,21 @@ return {
   },
   {
     "HampusHauffman/block.nvim",
-    config = function()
-      require("block").setup({})
-    end,
   },
   {
     "zbirenbaum/copilot.lua",
     opts = {
       copilot_node_command = vim.g.neovim_node_host_prog,
     },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      }
+    end,
   },
 }
