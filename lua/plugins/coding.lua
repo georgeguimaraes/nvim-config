@@ -85,10 +85,18 @@ return {
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
-      local cmp = require("cmp")
+      local bordered = {
+        border = "rounded",
+        winhighlight = "FloatBorder:IndentBlanklineChar,Normal:Normal",
+        zindex = 1001,
+        scrolloff = 0,
+        col_offset = 0,
+        side_padding = 1,
+        scrollbar = true,
+      }
       opts.window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = bordered,
+        documentation = bordered,
       }
     end,
   },
