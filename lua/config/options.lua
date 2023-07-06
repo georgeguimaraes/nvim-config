@@ -3,6 +3,7 @@
 -- Add any additional options here
 --
 
+vim.opt.scrolloff = 8
 vim.opt.timeoutlen = 150
 
 if vim.g.neovide then
