@@ -28,8 +28,8 @@ set("n", "\\", function()
   vim.api.nvim_set_current_win(picked_window_id)
 end, { desc = "Pick a window" })
 
-set("n", "<leader>cs", "<cmd>ISwapWith", { desc = "Swap cursor with ..." })
-set("n", "<leader>ga", "<cmd>GitCoAuthors", { desc = "Add Co-Authors" })
+set("n", "<leader>cs", "<cmd>ISwapWith<cr>", { desc = "Swap cursor with ..." })
+set("n", "<leader>ga", "<cmd>GitCoAuthors<cr>", { desc = "Add Co-Authors" })
 
 local wk = require("which-key")
 wk.register({ ["<leader>cj"] = { name = "Code Split/Join" } })
