@@ -40,11 +40,18 @@ set("n", "<leader>cjs", "<cmd>TSJSplit<CR>", { desc = "Split code block" })
 set("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Empty line above" })
 set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Empty line below" })
 
-set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
-set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
-set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
-set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
-
 set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find Git Files (root dir)" })
+
+set("n", "<D-b>", "<cmd>Telescope find_files<CR>")
+set("n", "<D-o>", "<cmd>Telescope find_files<CR>")
+
+set("n", "<C-A-h>", require("smart-splits").resize_left)
+set("n", "<C-A-j>", require("smart-splits").resize_down)
+set("n", "<C-A-k>", require("smart-splits").resize_up)
+set("n", "<C-A-l>", require("smart-splits").resize_right)
+set("n", "<C-h>", require("smart-splits").move_cursor_left)
+set("n", "<C-j>", require("smart-splits").move_cursor_down)
+set("n", "<C-k>", require("smart-splits").move_cursor_up)
+set("n", "<C-l>", require("smart-splits").move_cursor_right)
