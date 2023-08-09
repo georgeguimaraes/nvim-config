@@ -5,7 +5,9 @@
 
 vim.opt.scrolloff = 8
 vim.opt.timeoutlen = 150
+vim.opt.swapfile = false
 
 if vim.g.neovide then
   vim.opt.guifont = "FiraCodeGG Nerd Font:h16"
+  vim.g.neovide_remember_window_size = true
 end
