@@ -17,4 +17,14 @@ return {
       },
     },
   },
+  {
+    "goolord/alpha-nvim",
+    opts = function(_, dashboard)
+      table.insert(dashboard.section.buttons.val, 3, dashboard.button("e", " " .. " Browse files", ":Neotree<CR>"))
+      for _, button in ipairs(dashboard.section.buttons.val) do
+        button.opts.hl = "AlphaButtons"
+        button.opts.hl_shortcut = "AlphaShortcut"
+      end
+    end,
+  },
 }
