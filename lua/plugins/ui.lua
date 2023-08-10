@@ -27,4 +27,12 @@ return {
       end
     end,
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      sections = {
+        lualine_z = {}, -- Disable time from LazyVim
+      },
+    },
+  },
 }
