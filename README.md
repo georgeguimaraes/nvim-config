@@ -1,3 +1,3 @@
-# George Guimarães' nvim config
-
-My config uses [LazyVim](https://www.lazyvim.org/) as my "distro".
+Neovim's canvas glows,<br>
+George's code, engineering prose,<br>
+Daily focus flows.
