@@ -20,13 +20,13 @@ set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
 set("n", "<leader>wq", "<cmd>q<cr>", { desc = "Quit window" })
 
-local picker = require("window-picker")
-set("n", "\\", function()
-  local picked_window_id = picker.pick_window({
-    include_current_win = true,
-  }) or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(picked_window_id)
-end, { desc = "Pick a window" })
+-- local picker = require("window-picker")
+-- set("n", "\\", function()
+--   local picked_window_id = picker.pick_window({
+--     include_current_win = true,
+--   }) or vim.api.nvim_get_current_win()
+--   vim.api.nvim_set_current_win(picked_window_id)
+-- end, { desc = "Pick a window" })
 
 set("n", "<leader>cs", "<cmd>ISwapWith<cr>", { desc = "Swap cursor with ..." })
 set("n", "<leader>ga", "<cmd>GitCoAuthors<cr>", { desc = "Add Co-Authors" })
