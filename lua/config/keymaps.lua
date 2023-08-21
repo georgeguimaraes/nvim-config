@@ -4,17 +4,17 @@
 --
 local set = vim.keymap.set
 
-set("n", ",1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Buffer 1" })
-set("n", ",2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Buffer 2" })
-set("n", ",3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Buffer 3" })
-set("n", ",4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Buffer 4" })
-set("n", ",5", "<cmd>BufferLineGoToBuffer 5<cr>", { desc = "Buffer 5" })
-set("n", ",6", "<cmd>BufferLineGoToBuffer 6<cr>", { desc = "Buffer 6" })
-set("n", ",7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Buffer 7" })
-set("n", ",8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Buffer 8" })
-set("n", ",9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Buffer 9" })
-set("n", ",0", "<cmd>BufferLineGoToBuffer 0<cr>", { desc = "Buffer 0" })
-set("n", ",l", "<cmd>e#<cr>", { desc = "Last Buffer" })
+set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Buffer 1" })
+set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Buffer 2" })
+set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Buffer 3" })
+set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Buffer 4" })
+set("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>", { desc = "Buffer 5" })
+set("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>", { desc = "Buffer 6" })
+set("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Buffer 7" })
+set("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Buffer 8" })
+set("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Buffer 9" })
+set("n", "<leader>0", "<cmd>BufferLineGoToBuffer 0<cr>", { desc = "Buffer 0" })
+-- set("n", "<leader>;", "<cmd>e#<cr>", { desc = "Last Buffer" })
 
 set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
