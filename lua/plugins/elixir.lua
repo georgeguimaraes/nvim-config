@@ -30,10 +30,14 @@ return {
     },
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
+    optional = true,
     opts = function(_, opts)
-      local null_ls = require("null-ls")
-      table.insert(opts.sources, null_ls.builtins.diagnostics.credo)
+      local nls = require("null-ls")
+      opts.sources = opts.sources or {}
+      vim.list_extend(opts.sources, {
+        nls.builtins.diagnostics.credo,
+      })
     end,
   },
 }
