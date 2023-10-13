@@ -21,16 +21,10 @@ return {
       },
     },
   },
-  {
-    "nvim-telescope/telescope-fzy-native.nvim",
-    config = function()
-      require("telescope").load_extension("fzy_native")
-    end,
-  },
-  {
-    "ahmedkhalf/project.nvim",
-    opts = {
-      detection_methods = { "pattern" },
-    },
-  },
+  -- {
+  --   "ahmedkhalf/project.nvim",
+  --   opts = {
+  --     detection_methods = { "pattern" },
+  --   },
+  -- },
 }

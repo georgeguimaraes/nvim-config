@@ -8,10 +8,6 @@ return {
     end,
   },
   {
-    "mizlan/iswap.nvim",
-    event = "VeryLazy",
-  },
-  {
     "Wansmer/treesj",
     requires = { "nvim-treesitter" },
     config = function()
@@ -32,19 +28,6 @@ return {
     "echasnovski/mini.move",
     version = false,
     lazy = true,
-  },
-  {
-    "HampusHauffman/block.nvim",
-    config = function()
-      require("block").setup({})
-    end,
-    cmd = { "Block", "BlockOn", "BlockOff" },
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    -- opts = {
-    --   copilot_node_command = vim.g.neovim_node_host_prog,
-    -- },
   },
   {
     "hrsh7th/nvim-cmp",
