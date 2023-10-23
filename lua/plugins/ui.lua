@@ -1,6 +1,4 @@
 return {
-  { "Mofiqul/dracula.nvim" },
-
   {
     "LazyVim/LazyVim",
     opts = {
@@ -33,15 +31,21 @@ return {
     },
   },
   {
-    "glepnir/dashboard-nvim",
+    "nvimdev/dashboard-nvim",
     opts = function(_, options)
       for _, v in ipairs(options.config.center) do
         if v.key == "e" then
           v.key = "x"
         end
+        if v.key == "p" then
+          v.key_format = "  %s"
+        end
       end
-      table.insert(options.config.center, 3, { action = "Neotree", key = "e", desc = "Browse Files", icon = "  " })
-      return options
+      table.insert(
+        options.config.center,
+        3,
+        { action = "Neotree", key = "e", key_format = "  %s", desc = "Browse Files", icon = "  " }
+      )
     end,
   },
 }
