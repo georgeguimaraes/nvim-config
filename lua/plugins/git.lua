@@ -1,5 +1,12 @@
 return {
-  { "2kabhishek/co-author.nvim" },
+  {
+    "2kabhishek/co-author.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+  },
   {
     "NeogitOrg/neogit",
     dependencies = {
@@ -12,6 +19,7 @@ return {
   },
   {
     "pwntester/octo.nvim",
+    event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",

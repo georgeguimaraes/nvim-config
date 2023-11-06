@@ -9,6 +9,7 @@ return {
   },
   {
     "Wansmer/treesj",
+    event = "VeryLazy",
     requires = { "nvim-treesitter" },
     config = function()
       require("treesj").setup({
@@ -26,6 +27,7 @@ return {
   },
   {
     "echasnovski/mini.move",
+    event = "VeryLazy",
     version = false,
     lazy = true,
   },
@@ -117,7 +119,9 @@ return {
   {
     "Wansmer/sibling-swap.nvim",
     dependencies = { "nvim-treesitter" },
+    event = "VeryLazy",
     opts = {
+      use_default_keymaps = false,
       keymaps = {
         ["<M-.>"] = "swap_with_right_with_opp",
         ["<M-,>"] = "swap_with_left_with_opp",
