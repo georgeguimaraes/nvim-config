@@ -21,10 +21,4 @@ return {
       },
     },
   },
-  -- {
-  --   "ahmedkhalf/project.nvim",
-  --   opts = {
-  --     detection_methods = { "pattern" },
-  --   },
-  -- },
 }
