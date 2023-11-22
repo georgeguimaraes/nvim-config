@@ -150,6 +150,9 @@ return {
       "hrsh7th/nvim-cmp",
     },
     event = "InsertEnter",
-    config = true,
+    opts = {
+      tabkey = "",
+      backwards_tabkey = "",
+    },
   },
 }
