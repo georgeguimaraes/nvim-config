@@ -2,12 +2,14 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      filesystem = {
-        follow_current_file = {
-          enabled = false,
-        },
+      sources = { "filesystem" },
+      window = {
+        width = 50,
       },
-      sources = { "filesystem", "buffers", "git_status" },
+      enable_diagnostics = false,
+      enable_opened_markers = false,
+      log_level = "trace",
+      log_to_file = "/tmp/neotree.lazyvim.log",
     },
   },
   {
