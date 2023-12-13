@@ -122,9 +122,19 @@ return {
     event = "VeryLazy",
     opts = {
       use_default_keymaps = false,
-      keymaps = {
-        ["<M-.>"] = "swap_with_right_with_opp",
-        ["<M-,>"] = "swap_with_left_with_opp",
+    },
+    keys = {
+      {
+        "<M-.>",
+        function(_)
+          require("sibling-swap").swap_with_right_with_opp()
+        end,
+      },
+      {
+        "<M-,>",
+        function(_)
+          require("sibling-swap").swap_with_left_with_opp()()
+        end,
       },
     },
   },
