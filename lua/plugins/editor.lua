@@ -2,12 +2,12 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      sources = { "filesystem" },
+      -- sources = { "filesystem" },
       window = {
-        width = 50,
+        width = 40,
       },
-      enable_diagnostics = false,
-      enable_opened_markers = false,
+      -- enable_diagnostics = false,
+      -- enable_opened_markers = false,
       log_level = "trace",
       log_to_file = "/tmp/neotree.lazyvim.log",
     },
