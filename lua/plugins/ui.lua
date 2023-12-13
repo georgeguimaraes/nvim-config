@@ -48,4 +48,13 @@ return {
       )
     end,
   },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      window = {
+        border = "shadow",
+        margin = { 1, 0, 2, 0 },
+      },
+    },
+  },
 }
