@@ -135,7 +135,7 @@ return {
       {
         "<tab>",
         function()
-          return "<Plug>(Tabout)" or (require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next") or "<tab>"
+          return (require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next") or "<Plug>(Tabout)" or "<tab>"
         end,
         expr = true,
         silent = true,
