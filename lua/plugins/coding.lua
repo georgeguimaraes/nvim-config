@@ -113,6 +113,9 @@ return {
             symbol_request_pos = "start",
           },
         },
+        disable = {
+          filetypes = { "dockerfile" },
+        },
       })
     end,
   },
