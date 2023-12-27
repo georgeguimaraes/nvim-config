@@ -168,4 +168,12 @@ return {
       backwards_tabkey = "",
     },
   },
+  {
+    "smjonas/inc-rename.nvim",
+    opts = {},
+  },
+  {
+    "soulis-1256/hoverhints.nvim",
+    event = "VeryLazy",
+  },
 }
