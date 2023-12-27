@@ -6,6 +6,10 @@ return {
   {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
+    keys = {
+      { "<leader>gd", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
+      { "<leader>gD", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
+    },
   },
   {
     "NeogitOrg/neogit",
@@ -13,9 +17,10 @@ return {
       "sindrets/diffview.nvim", -- optional
     },
     cmd = "Neogit",
-    config = function()
-      require("neogit").setup({})
-    end,
+    keys = {
+      { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
+      { "<leader>gl", "<cmd>Neogit kind=log<cr>", desc = "Neogit log" },
+    },
   },
   {
     "pwntester/octo.nvim",
