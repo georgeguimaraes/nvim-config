@@ -3,9 +3,7 @@ return {
     "sustech-data/wildfire.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("wildfire").setup()
-    end,
+    opts = {},
   },
   {
     "Wansmer/treesj",
@@ -165,10 +163,12 @@ return {
   },
   {
     "smjonas/inc-rename.nvim",
+    event = "VeryLazy",
     opts = {},
   },
   {
     "soulis-1256/hoverhints.nvim",
     event = "BufEnter",
+    opts = {},
   },
 }

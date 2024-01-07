@@ -1,20 +1,5 @@
 return {
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight-moon",
-    },
-  },
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        numbers = "ordinal",
-        separator_style = "slant",
-      },
-    },
-  },
-  {
     "nvim-lualine/lualine.nvim",
     opts = {
       sections = {
@@ -52,7 +37,8 @@ return {
     "folke/which-key.nvim",
     opts = {
       window = {
-        border = "shadow",
+        border = "single",
+        winblend = 10,
         margin = { 1, 0, 2, 0 },
       },
     },
