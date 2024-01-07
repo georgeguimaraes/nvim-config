@@ -143,12 +143,12 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
-    dependencies = { "abecodes/tabout.nvim" },
+    dependencies = { "neotab.nvim" },
     keys = {
       {
         "<tab>",
         function()
-          return (require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next") or "<Plug>(Tabout)" or "<tab>"
+          return (require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next") or "<Plug>(neotab-out)" or "<tab>"
         end,
         expr = true,
         silent = true,
@@ -157,15 +157,10 @@ return {
     },
   },
   {
-    "abecodes/tabout.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "hrsh7th/nvim-cmp",
-    },
+    "kawre/neotab.nvim",
     event = "InsertEnter",
     opts = {
       tabkey = "",
-      backwards_tabkey = "",
     },
   },
   {
