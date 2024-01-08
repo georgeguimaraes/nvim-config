@@ -166,9 +166,4 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-  {
-    "soulis-1256/hoverhints.nvim",
-    event = "BufEnter",
-    opts = {},
-  },
 }

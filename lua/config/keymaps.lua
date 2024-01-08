@@ -4,13 +4,13 @@
 --
 local set = vim.keymap.set
 
+set("n", "<A-S-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer in tabline" })
+set("n", "<A-S-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer in tabline" })
 set("n", "<leader>;", "<cmd>e#<cr>", { desc = "Last Buffer" })
 
 set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
 set("n", "<leader>wq", "<cmd>q<cr>", { desc = "Quit window" })
-
-set("n", "<leader>ga", "<cmd>GitCoAuthors<cr>", { desc = "Add Co-Authors" })
 
 local wk = require("which-key")
 wk.register({ ["<leader>cj"] = { name = "Code Split/Join" } })

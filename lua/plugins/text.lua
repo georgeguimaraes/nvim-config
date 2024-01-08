@@ -35,7 +35,7 @@ return {
   },
   {
     "jmbuhr/otter.nvim",
-    event = "VeryLazy",
+    event = "BufEnter",
     dependencies = {
       "hrsh7th/nvim-cmp",
       "neovim/nvim-lspconfig",
