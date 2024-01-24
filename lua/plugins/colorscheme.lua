@@ -1,8 +1,31 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    opts = {
-      style = "moon",
-    },
-  },
+  -- {
+  --   "AlexvZyl/nordic.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("nordic").load()
+  --   end,
+  -- },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("nightfox").load()
+  --   end,
+  -- },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       transparent = false,
+  --       italic_comments = true,
+  --       hide_fillchars = true,
+  --       borderless_telescope = false,
+  --     })
+  --   end,
+  -- },
 }
