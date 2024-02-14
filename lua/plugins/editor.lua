@@ -38,4 +38,8 @@ return {
       leader_key = ";", -- Recommended to be a single key
     },
   },
+  {
+    "chentoast/marks.nvim",
+    opts = {},
+  },
 }
