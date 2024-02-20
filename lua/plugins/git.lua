@@ -31,42 +31,55 @@ return {
         end,
         desc = "Time Machine for this file",
       },
+      {
+        "<leader>go",
+        function()
+          local sha = require("agitator").git_blame_commit_for_line()
+          vim.cmd("DiffviewOpen " .. sha .. "^.." .. sha)
+        end,
+        desc = "Open commit for this line",
+      },
     },
   },
   {
     "2kabhishek/co-author.nvim",
     event = "VeryLazy",
     keys = { "<leader>ga", "<cmd>GitCoAuthors<cr>", desc = "Add Co-Authors" },
-    {
-      "sindrets/diffview.nvim",
-      event = "VeryLazy",
-      keys = {
-        { "<leader>gL", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
-        { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
-      },
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>gL", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
+      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
     },
-    {
-      "NeogitOrg/neogit",
-      dependencies = {
-        "sindrets/diffview.nvim", -- optional
-      },
-      cmd = "Neogit",
-      keys = {
-        { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
-        { "<leader>gl", "<cmd>Neogit kind=log<cr>", desc = "Neogit log" },
-      },
+  },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional
+      "nvim-telescope/telescope.nvim", -- optional
     },
-    {
-      "pwntester/octo.nvim",
-      event = "VeryLazy",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-        "nvim-tree/nvim-web-devicons",
-      },
-      opts = {},
-      keys = { "<leader>go", "<cmd>Octo<cr>", desc = "Octo" },
+    cmd = "Neogit",
+    keys = {
+      { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
+      { "<leader>gl", "<cmd>Neogit kind=log<cr>", desc = "Neogit log" },
     },
+    config = {
+      graph_style = "unicode",
+    },
+  },
+  {
+    "pwntester/octo.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {},
+    keys = { "<leader>go", "<cmd>Octo<cr>", desc = "Octo" },
   },
   {
     "hrsh7th/nvim-cmp",
