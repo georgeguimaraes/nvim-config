@@ -35,3 +35,11 @@ set("n", "<C-k>", require("smart-splits").move_cursor_up)
 set("n", "<C-l>", require("smart-splits").move_cursor_right)
 
 set("n", "<leader>gp", "<space>ghb", { remap = true, desc = "Git Plame" })
+
+set("n", "<leader>go", function()
+  local sha = require("agitator").git_blame_commit_for_line()
+  local commit_view = require("neogit.buffers.commit_view").new(sha, false)
+  commit_view:open()
+end, { desc = "Open commit for this line" })
+
+set("n", "<leader>gl", require("neogit").action("log", "log_current"), { desc = "Neogit Log for this file" })

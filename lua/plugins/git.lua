@@ -1,7 +1,7 @@
 return {
   {
     "emmanueltouzery/agitator.nvim",
-    opts = {},
+    event = "VeryLazy",
     keys = {
       {
         "<leader>gb",
@@ -31,14 +31,6 @@ return {
         end,
         desc = "Time Machine for this file",
       },
-      {
-        "<leader>go",
-        function()
-          local sha = require("agitator").git_blame_commit_for_line()
-          vim.cmd("DiffviewOpen " .. sha .. "^.." .. sha)
-        end,
-        desc = "Open commit for this line",
-      },
     },
   },
   {
@@ -56,6 +48,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
+    event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional
@@ -64,7 +57,6 @@ return {
     cmd = "Neogit",
     keys = {
       { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
-      { "<leader>gl", "<cmd>Neogit kind=log<cr>", desc = "Neogit log" },
     },
     config = {
       graph_style = "unicode",
