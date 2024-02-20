@@ -33,3 +33,5 @@ set("n", "<C-h>", require("smart-splits").move_cursor_left)
 set("n", "<C-j>", require("smart-splits").move_cursor_down)
 set("n", "<C-k>", require("smart-splits").move_cursor_up)
 set("n", "<C-l>", require("smart-splits").move_cursor_right)
+
+set("n", "<leader>gp", "<space>ghb", { remap = true, desc = "Git Plame" })
