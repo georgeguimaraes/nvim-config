@@ -7,7 +7,7 @@ return {
     opts = {
       filesystem = {
         follow_current_file = {
-          enabled = false,
+          enabled = true,
         },
       },
       -- sources = { "filesystem" },
