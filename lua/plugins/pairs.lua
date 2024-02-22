@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.pairs",
-    enabled = false,
+    enabled = true,
   },
   {
     "windwp/nvim-autopairs",
