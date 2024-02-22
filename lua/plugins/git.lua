@@ -57,6 +57,14 @@ return {
     cmd = "Neogit",
     keys = {
       { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
+      {
+        "<leader>gl",
+        function()
+          local file = vim.fn.expand("%")
+          require("neogit").action("log", "log_current", { "--", file })()
+        end,
+        desc = "Neogit Log for this file",
+      },
     },
     config = {
       graph_style = "unicode",

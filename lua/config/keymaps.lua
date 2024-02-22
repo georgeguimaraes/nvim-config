@@ -23,7 +23,6 @@ set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR
 
 set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
-set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find Git Files (root dir)" })
 
 set("n", "<C-A-h>", require("smart-splits").resize_left)
 set("n", "<C-A-j>", require("smart-splits").resize_down)
@@ -41,5 +40,3 @@ set("n", "<leader>go", function()
   local commit_view = require("neogit.buffers.commit_view").new(sha, false)
   commit_view:open()
 end, { desc = "Open commit for this line" })
-
-set("n", "<leader>gl", require("neogit").action("log", "log_current"), { desc = "Neogit Log for this file" })
