@@ -42,4 +42,27 @@ return {
     "chentoast/marks.nvim",
     opts = {},
   },
+
+  {
+    "b0o/incline.nvim",
+    opts = {
+      hide = {
+        only_win = true,
+      },
+      highlight = {
+        groups = {
+          InclineNormal = {
+            guifg = "#c099ff",
+            guibg = "#292e42",
+          },
+          InclineNormalNC = {
+            guifg = "#7a88cf",
+            guibg = "#292e42",
+          },
+        },
+      },
+    },
+    -- Optional: Lazy load Incline
+    event = "VeryLazy",
+  },
 }
