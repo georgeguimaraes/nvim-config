@@ -112,7 +112,7 @@ return {
           },
         },
         disable = {
-          filetypes = { "dockerfile" },
+          filetypes = { "dockerfile", "ruby" },
         },
       })
     end,
