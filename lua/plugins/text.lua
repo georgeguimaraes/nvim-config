@@ -47,4 +47,18 @@ return {
       },
     },
   },
+  -- {
+  --   "barreiroleo/ltex_extra.nvim",
+  --   ft = { "markdown", "tex" },
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  --   opts = {},
+  -- },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ltex = {},
+      },
+    },
+  },
 }
