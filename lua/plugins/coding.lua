@@ -166,4 +166,7 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "briangwaltney/paren-hint.nvim",
+  },
 }
