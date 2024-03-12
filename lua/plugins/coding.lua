@@ -31,10 +31,12 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-emoji",
-    },
     opts = function(_, opts)
+      local cmp = require("cmp")
+      local types = require("cmp.types")
+      local luasnip = require("luasnip")
+      local neotab = require("neotab")
+
       local bordered = {
         border = "rounded",
         winhighlight = "FloatBorder:IndentBlanklineChar,Normal:Normal",
@@ -48,6 +50,37 @@ return {
         completion = bordered,
         documentation = bordered,
       }
+
+      opts.mapping["<CR>"] = cmp.mapping({
+        i = cmp.mapping.confirm({ select = false }),
+      })
+
+      opts.mapping["<S-CR>"] = cmp.mapping({
+        i = cmp.mapping.confirm({ select = true }),
+      })
+
+      opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        else
+          neotab.tabout()
+        end
+      end, { "i", "s" })
+
+      opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          neotab.tabout()
+        end
+      end, { "i", "s" })
+
+      -- opts.preselect = types.cmp.PreselectMode.None
+      opts.completion = { completeopt = "menu,menuone,noselect,noinsert" }
     end,
   },
   {
@@ -140,21 +173,6 @@ return {
     },
   },
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = { "neotab.nvim" },
-    keys = {
-      {
-        "<tab>",
-        function()
-          return (require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next") or "<Plug>(neotab-out)" or "<tab>"
-        end,
-        expr = true,
-        silent = true,
-        mode = "i",
-      },
-    },
-  },
-  {
     "kawre/neotab.nvim",
     event = "InsertEnter",
     opts = {
@@ -167,6 +185,20 @@ return {
     opts = {},
   },
   {
-    "briangwaltney/paren-hint.nvim",
+    "rgroli/other.nvim",
+    event = "VeryLazy",
+    main = "other-nvim",
+    opts = {
+      mappings = {
+        "rails",
+      },
+    },
+    keys = {
+      {
+        "<leader>co",
+        "<cmd>:Other<CR>",
+        desc = "Other file",
+      },
+    },
   },
 }
