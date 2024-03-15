@@ -65,4 +65,9 @@ return {
     -- Optional: Lazy load Incline
     event = "VeryLazy",
   },
+  {
+    "LunarVim/bigfile.nvim",
+    event = "BufRead",
+    opts = {},
+  },
 }
