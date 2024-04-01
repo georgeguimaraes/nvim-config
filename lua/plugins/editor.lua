@@ -66,8 +66,8 @@ return {
     event = "VeryLazy",
   },
   {
-    "LunarVim/bigfile.nvim",
-    event = "BufRead",
+    "pteroctopus/faster.nvim",
+    lazy = false,
     opts = {},
   },
 }
