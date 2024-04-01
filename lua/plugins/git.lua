@@ -48,6 +48,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
+    branch = "nightly",
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
@@ -82,17 +83,18 @@ return {
       graph_style = "unicode",
     },
   },
-  {
-    "pwntester/octo.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {},
-    keys = { "<leader>go", "<cmd>Octo<cr>", desc = "Octo" },
-  },
+  -- {
+  --   "pwntester/octo.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = function()
+  --     require("octo").setup()
+  --   end,
+  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -109,5 +111,36 @@ return {
         { name = "git" },
       }))
     end,
+  },
+  {
+    "ruifm/gitlinker.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = "GitLink",
+    keys = {
+      { "<leader>gy", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+      { "<leader>gY", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+    },
+    opts = {},
+  },
+  {
+    "dlvhdr/gh-addressed.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "folke/trouble.nvim",
+    },
+    cmd = "GhReviewComments",
+    keys = {
+      { "<leader>gr", "<cmd>GhReviewComments<cr>", desc = "GitHub Review Comments" },
+    },
+  },
+  {
+    "dlvhdr/gh-blame.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
+    keys = {
+      { "<leader>gB", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
+    },
   },
 }
