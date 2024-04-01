@@ -1,6 +1,36 @@
 return {
   {
+    "sustech-data/wildfire.nvim",
+    event = "BufEnter",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      {
+        surrounds = {
+          { "(", ")" },
+          { "{", "}" },
+          { "<", ">" },
+          { "[", "]" },
+        },
+        keymaps = {
+          init_selection = "<CR>",
+          node_incremental = "<CR>",
+          node_decremental = "<BS>",
+        },
+        filetype_exclude = { "qf", "neotree" }, --keymaps will be unset in excluding filetypes
+      },
+    },
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    lazy = false,
+    opts = { useDefaultKeymaps = true },
+  },
+  {
     "nvim-treesitter/playground",
+    config = function() end,
+  },
+  {
+    "RRethy/nvim-treesitter-textsubjects",
     config = function() end,
   },
   {
@@ -23,6 +53,15 @@ return {
           update = "R",
           goto_node = "<cr>",
           show_help = "?",
+        },
+      },
+      textsubjects = {
+        enable = true,
+        prev_selection = "<S-.>", -- (Optional) keymap to select the previous selection
+        keymaps = {
+          ["."] = { "textsubjects-smart", desc = "Select smart (text subject)" },
+          [";"] = { "textsubjects-container-outer", desc = "Select outer containers (text subject)" },
+          ["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (text subject)" },
         },
       },
     },

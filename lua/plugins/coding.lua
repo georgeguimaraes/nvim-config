@@ -1,11 +1,5 @@
 return {
   {
-    "sustech-data/wildfire.nvim",
-    event = "BufEnter",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = {},
-  },
-  {
     "Wansmer/treesj",
     event = "VeryLazy",
     requires = { "nvim-treesitter" },
@@ -194,10 +188,5 @@ return {
         desc = "Other file",
       },
     },
-  },
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    lazy = false,
-    opts = { useDefaultKeymaps = true },
   },
 }
