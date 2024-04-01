@@ -1,7 +1,7 @@
 return {
   {
     "sustech-data/wildfire.nvim",
-    event = "VeryLazy",
+    event = "BufEnter",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {},
   },
@@ -18,24 +18,18 @@ return {
       })
     end,
   },
-  {
-    "echasnovski/mini.bracketed",
-    version = false,
-    event = "VeryLazy",
-  },
-  {
-    "echasnovski/mini.move",
-    event = "VeryLazy",
-    version = false,
-    lazy = true,
-  },
+  -- {
+  --   "echasnovski/mini.bracketed",
+  --   version = false,
+  --   event = "VeryLazy",
+  -- },
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
-      local cmp = require("cmp")
-      local types = require("cmp.types")
-      local luasnip = require("luasnip")
-      local neotab = require("neotab")
+      -- local cmp = require("cmp")
+      -- local types = require("cmp.types")
+      -- local luasnip = require("luasnip")
+      -- local neotab = require("neotab")
 
       local bordered = {
         border = "rounded",
@@ -51,36 +45,36 @@ return {
         documentation = bordered,
       }
 
-      opts.mapping["<CR>"] = cmp.mapping({
-        i = cmp.mapping.confirm({ select = false }),
-      })
-
-      opts.mapping["<S-CR>"] = cmp.mapping({
-        i = cmp.mapping.confirm({ select = true }),
-      })
-
-      opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        else
-          neotab.tabout()
-        end
-      end, { "i", "s" })
-
-      opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          neotab.tabout()
-        end
-      end, { "i", "s" })
+      -- opts.mapping["<CR>"] = cmp.mapping({
+      --   i = cmp.mapping.confirm({ select = false }),
+      -- })
+      --
+      -- opts.mapping["<S-CR>"] = cmp.mapping({
+      --   i = cmp.mapping.confirm({ select = true }),
+      -- })
+      --
+      -- opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_next_item()
+      --   elseif luasnip.expand_or_jumpable() then
+      --     luasnip.expand_or_jump()
+      --   else
+      --     neotab.tabout()
+      --   end
+      -- end, { "i", "s" })
+      --
+      -- opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_prev_item()
+      --   elseif luasnip.jumpable(-1) then
+      --     luasnip.jump(-1)
+      --   else
+      --     neotab.tabout()
+      --   end
+      -- end, { "i", "s" })
 
       -- opts.preselect = types.cmp.PreselectMode.None
-      opts.completion = { completeopt = "menu,menuone,noselect,noinsert" }
+      -- opts.completion = { completeopt = "menu,menuone,noselect,noinsert" }
     end,
   },
   {
@@ -200,5 +194,10 @@ return {
         desc = "Other file",
       },
     },
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    lazy = false,
+    opts = { useDefaultKeymaps = true },
   },
 }
