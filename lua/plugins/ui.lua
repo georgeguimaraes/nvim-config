@@ -19,11 +19,8 @@ return {
     "nvimdev/dashboard-nvim",
     opts = function(_, options)
       for _, v in ipairs(options.config.center) do
-        if v.key == "e" then
-          v.key = "x"
-        end
-        if v.key == "p" then
-          v.key_format = "  %s"
+        if v.key == "g" then
+          v.key = "/"
         end
       end
       table.insert(
