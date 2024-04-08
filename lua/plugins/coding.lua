@@ -39,6 +39,11 @@ return {
         documentation = bordered,
       }
 
+      opts.view = {
+        entries = {
+          follow_cursor = true,
+        },
+      }
       -- opts.mapping["<CR>"] = cmp.mapping({
       --   i = cmp.mapping.confirm({ select = false }),
       -- })

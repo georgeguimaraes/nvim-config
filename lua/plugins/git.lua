@@ -81,6 +81,17 @@ return {
     },
     config = {
       graph_style = "unicode",
+      sections = {
+        recent = {
+          folded = false,
+          hidden = false,
+        },
+      },
+      signs = {
+        hunk = { "", "" },
+        item = { ">", "v" },
+        section = { ">", "v" },
+      },
     },
   },
   -- {
