@@ -42,7 +42,7 @@ return {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
     keys = {
-      { "<leader>gL", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
+      { "<leader>gD", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
       { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
     },
   },

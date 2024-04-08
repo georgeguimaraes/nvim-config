@@ -38,3 +38,7 @@ set("n", "<leader>gO", function()
   local commit_view = require("neogit.buffers.commit_view").new(sha, false)
   commit_view:open()
 end, { desc = "Open commit for this line" })
+
+set("n", "<leader>gc", function()
+  LazyVim.lazygit({ args = { "log" } })
+end, { desc = "Lazygit Commit Log" })
