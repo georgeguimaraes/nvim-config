@@ -42,3 +42,11 @@ end, { desc = "Open commit for this line" })
 set("n", "<leader>gc", function()
   LazyVim.lazygit({ args = { "log" } })
 end, { desc = "Lazygit Commit Log" })
+
+-- set("v", "<leader>gl", function()
+--   local file = vim.fn.expand("%")
+--   vim.cmd([[execute "normal! \<ESC>"]])
+--   local line_start = vim.fn.getpos("'<")[2]
+--   local line_end = vim.fn.getpos("'>")[2]
+--   LazyVim.lazygit({ args = { "log", "-f", "-L" .. line_start .. "," .. line_end .. ":" .. file } })
+-- end, { desc = "Neogit Log for this range" })
