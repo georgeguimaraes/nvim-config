@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     keys = {
       {
-        "<leader>gb",
+        "<leader>gB",
         function()
           require("agitator").git_blame_toggle()
         end,
