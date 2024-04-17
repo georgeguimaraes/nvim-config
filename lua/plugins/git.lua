@@ -154,4 +154,10 @@ return {
       { "<leader>gB", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
     },
   },
+  {
+    "FabijanZulj/blame.nvim",
+    cmd = "BlameToggle",
+    opts = {},
+    keys = { "<leader>gb", "<cmd>BlameToggle<cr>", desc = "Blame Toggle" },
+  },
 }
