@@ -55,6 +55,7 @@ return {
           show_help = "?",
         },
       },
+      incremental_selection = { enable = false },
       textsubjects = {
         enable = true,
         prev_selection = "<S-.>", -- (Optional) keymap to select the previous selection
