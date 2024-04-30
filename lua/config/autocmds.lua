@@ -14,3 +14,5 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     end
   end,
 })
+
+vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
