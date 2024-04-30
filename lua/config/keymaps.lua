@@ -23,6 +23,7 @@ set("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR
 
 set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
+set("n", "<leader>/", "<cmd>Telescope live_grep_args<cr>", { desc = "Live Grep (args)" })
 
 set("n", "<C-A-h>", require("smart-splits").resize_left)
 set("n", "<C-A-j>", require("smart-splits").resize_down)

@@ -21,6 +21,7 @@ return {
       for _, v in ipairs(options.config.center) do
         if v.key == "g" then
           v.key = "/"
+          v.action = "Telescope live_grep_args"
         end
       end
       table.insert(
