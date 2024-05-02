@@ -68,20 +68,47 @@ return {
       hide = {
         only_win = true,
       },
-      highlight = {
-        groups = {
-          InclineNormal = {
-            guifg = "#c099ff",
-            guibg = "#292e42",
-          },
-          InclineNormalNC = {
-            guifg = "#7a88cf",
-            guibg = "#292e42",
-          },
+      window = {
+        overlap = {
+          borders = true,
+        },
+        padding = 0,
+        margin = {
+          vertical = 0,
+          horizontal = 0,
         },
       },
+      render = function(props)
+        local devicons = require("nvim-web-devicons")
+        local helpers = require("incline.helpers")
+        local arrow = require("arrow.statusline")
+
+        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+        if filename == "" then
+          filename = "[No Name]"
+        end
+        local ft_icon, ft_color = devicons.get_icon_color(filename)
+        local modified = vim.bo[props.buf].modified
+        local arrow_status = arrow.text_for_statusline_with_icons(props.buf)
+
+        local bgcol = props.focused and "#6172b0" or "#2f334d"
+        local arrow_bg = props.focused and "#6172b0" or "#2f334d"
+        ft_color = props.focused and "#6172b0" or "#2f334d"
+
+        local res = {
+          { "", guifg = bgcol },
+          {
+            ft_icon and { ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
+            { arrow_status, guibg = arrow_bg, guifg = helpers.contrast_color(arrow_bg) },
+            { " ", filename, gui = modified and "bold,italic" or "bold" },
+            guibg = bgcol,
+            guifg = helpers.contrast_color(bgcol),
+          },
+          { "", guifg = bgcol },
+        }
+        return res
+      end,
     },
-    -- Optional: Lazy load Incline
     event = "VeryLazy",
   },
   {
