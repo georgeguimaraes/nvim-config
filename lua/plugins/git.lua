@@ -124,14 +124,14 @@ return {
     end,
   },
   {
-    "ruifm/gitlinker.nvim",
+    "linrongbin16/gitlinker.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
     cmd = "GitLink",
     keys = {
-      { "<leader>gy", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
-      { "<leader>gY", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+      { "<leader>gy", "<cmd>GitLink default_branch<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+      { "<leader>gY", "<cmd>GitLink! default_branch<cr>", mode = { "n", "v" }, desc = "Open git link" },
     },
     opts = {},
   },
@@ -156,6 +156,7 @@ return {
   },
   {
     "FabijanZulj/blame.nvim",
+    event = "VeryLazy",
     cmd = "BlameToggle",
     opts = {},
     keys = { "<leader>gb", "<cmd>BlameToggle<cr>", desc = "Blame Toggle" },
