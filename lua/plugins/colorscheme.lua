@@ -15,19 +15,19 @@ return {
   --     require("nightfox").load()
   --   end,
   -- },
-  -- {
-  --   "scottmckendry/cyberdream.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("cyberdream").setup({
-  --       transparent = false,
-  --       italic_comments = true,
-  --       hide_fillchars = true,
-  --       borderless_telescope = false,
-  --     })
-  --   end,
-  -- },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        transparent = true,
+        italic_comments = true,
+        hide_fillchars = true,
+        borderless_telescope = false,
+      })
+    end,
+  },
   -- {
   --   "binhtran432k/dracula.nvim",
   --   lazy = false,
