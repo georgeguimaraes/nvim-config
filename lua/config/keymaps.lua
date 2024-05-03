@@ -37,9 +37,31 @@ set("n", "<C-l>", require("smart-splits").move_cursor_right)
 set("n", "<leader>gO", function()
   local sha = require("agitator").git_blame_commit_for_line()
   local commit_view = require("neogit.buffers.commit_view").new(sha)
+  --- @diagnostic disable-next-line: missing-parameter
   commit_view:open()
 end, { desc = "Open commit for this line" })
 
 set("n", "<leader>gc", function()
   LazyVim.lazygit({ args = { "log" } })
 end, { desc = "Lazygit Commit Log" })
+
+set("v", "<leader>y", function()
+  local filetype = vim.bo.filetype
+
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos = vim.fn.getpos("'>")
+  local lines = vim.api.nvim_buf_get_lines(0, start_pos[2] - 1, end_pos[2], false)
+
+  local command = {
+    "highlight",
+    "--syntax-by-name=" .. filetype,
+    "-O",
+    "rtf",
+    '--font=VictorMono Nerd Font',
+    "--font-size=30",
+    "--style=base16/github",
+  }
+  local cmd = vim.system(command, { stdin = lines, text = true }):wait()
+
+  vim.fn.setreg("+", cmd.stdout)
+end, { desc = "Yank as RTF", noremap = true, silent = true })
