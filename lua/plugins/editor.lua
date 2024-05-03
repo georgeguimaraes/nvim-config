@@ -96,7 +96,6 @@ return {
         ft_color = props.focused and "#6172b0" or "#2f334d"
 
         local res = {
-          { "", guifg = bgcol },
           {
             ft_icon and { ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
             { arrow_status, guibg = arrow_bg, guifg = helpers.contrast_color(arrow_bg) },
@@ -104,7 +103,6 @@ return {
             guibg = bgcol,
             guifg = helpers.contrast_color(bgcol),
           },
-          { "", guifg = bgcol },
         }
         return res
       end,
