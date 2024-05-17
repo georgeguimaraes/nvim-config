@@ -99,7 +99,7 @@ return {
           {
             ft_icon and { ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
             { arrow_status, guibg = arrow_bg, guifg = helpers.contrast_color(arrow_bg) },
-            { " ", filename, gui = modified and "bold,italic" or "bold" },
+            { " ", filename, gui = modified and "italic" or "" },
             guibg = bgcol,
             guifg = helpers.contrast_color(bgcol),
           },
