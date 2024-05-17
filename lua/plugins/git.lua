@@ -45,6 +45,13 @@ return {
       { "<leader>gD", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
       { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
     },
+    opts = {
+      view = {
+        merge_tool = {
+          layout = 'diff4_mixed'
+        }
+      }
+    }
   },
   {
     "NeogitOrg/neogit",
