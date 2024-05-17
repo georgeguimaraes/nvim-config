@@ -65,3 +65,5 @@ set("v", "<leader>y", function()
 
   vim.fn.setreg("+", cmd.stdout)
 end, { desc = "Yank as RTF", noremap = true, silent = true })
+
+vim.api.nvim_create_user_command('W', 'write', {})
