@@ -199,4 +199,10 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "echasnovski/mini.align",
+    version = false,
+    event = "VeryLazy",
+    opts = {},
+  },
 }
