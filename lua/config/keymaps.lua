@@ -42,7 +42,7 @@ set("n", "<leader>gO", function()
 end, { desc = "Open commit for this line" })
 
 set("n", "<leader>gc", function()
-  LazyVim.lazygit({ args = { "log" } })
+  LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
 end, { desc = "Lazygit Commit Log" })
 
 set("v", "<leader>y", function()
@@ -57,7 +57,7 @@ set("v", "<leader>y", function()
     "--syntax-by-name=" .. filetype,
     "-O",
     "rtf",
-    '--font=VictorMono Nerd Font',
+    "--font=VictorMono Nerd Font",
     "--font-size=30",
     "--style=base16/github",
   }
@@ -66,4 +66,4 @@ set("v", "<leader>y", function()
   vim.fn.setreg("+", cmd.stdout)
 end, { desc = "Yank as RTF", noremap = true, silent = true })
 
-vim.api.nvim_create_user_command('W', 'write', {})
+vim.api.nvim_create_user_command("W", "write", {})

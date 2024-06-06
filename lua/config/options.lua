@@ -6,6 +6,7 @@
 vim.opt.scrolloff = 2
 vim.opt.swapfile = false
 vim.g.deprecation_warnings = false
+vim.opt.relativenumber = false
 
 if vim.g.neovide then
   vim.opt.guifont = "FiraCodeGG Nerd Font:h16"

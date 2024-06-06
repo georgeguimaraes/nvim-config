@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     keys = {
       {
-        "<leader>gB",
+        "<leader>gw",
         function()
           require("agitator").git_blame_toggle()
         end,
@@ -48,10 +48,10 @@ return {
     opts = {
       view = {
         merge_tool = {
-          layout = 'diff4_mixed'
-        }
-      }
-    }
+          layout = "diff4_mixed",
+        },
+      },
+    },
   },
   {
     "NeogitOrg/neogit",
@@ -100,18 +100,6 @@ return {
       },
     },
   },
-  -- {
-  --   "pwntester/octo.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim",
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   config = function()
-  --     require("octo").setup()
-  --   end,
-  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -157,7 +145,7 @@ return {
     "dlvhdr/gh-blame.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
     keys = {
-      { "<leader>gB", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
+      { "<leader>gW", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
     },
   },
   {
@@ -165,6 +153,6 @@ return {
     event = "VeryLazy",
     cmd = "BlameToggle",
     opts = {},
-    keys = { "<leader>gb", "<cmd>BlameToggle<cr>", desc = "Blame Toggle" },
+    keys = { "<leader>gz", "<cmd>BlameToggle<cr>", desc = "Blame Toggle" },
   },
 }
