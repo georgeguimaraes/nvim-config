@@ -13,7 +13,7 @@ return {
     optional = true,
     opts = {
       linters_by_ft = {
-        ["*"] = { "codespell" },
+        -- ["*"] = { "codespell" },
         markdown = { "markdownlint" },
       },
       linters = {
