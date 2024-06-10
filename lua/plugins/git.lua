@@ -138,7 +138,7 @@ return {
     },
     cmd = "GhReviewComments",
     keys = {
-      { "<leader>gr", "<cmd>GhReviewComments<cr>", desc = "GitHub Review Comments" },
+      { "<leader>gR", "<cmd>GhReviewComments<cr>", desc = "GitHub Review Comments" },
     },
   },
   {
