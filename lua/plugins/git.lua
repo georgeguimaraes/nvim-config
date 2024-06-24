@@ -11,7 +11,7 @@ return {
         desc = "Git Blame",
       },
       {
-        "<leader>gf",
+        "<leader>gO",
         function()
           require("agitator").open_file_git_branch()
         end,
@@ -63,9 +63,9 @@ return {
     },
     cmd = "Neogit",
     keys = {
-      { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
+      { "<leader>gnn", "<cmd>Neogit<cr>", desc = "Neogit" },
       {
-        "<leader>gl",
+        "<leader>gnl",
         function()
           local file = vim.fn.expand("%")
           vim.cmd([[execute "normal! \<ESC>"]])
@@ -77,7 +77,7 @@ return {
         mode = "v",
       },
       {
-        "<leader>gl",
+        "<leader>gnl",
         function()
           local file = vim.fn.expand("%")
           require("neogit").action("log", "log_current", { "--", file })()
