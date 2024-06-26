@@ -34,16 +34,16 @@ set("n", "<C-j>", require("smart-splits").move_cursor_down)
 set("n", "<C-k>", require("smart-splits").move_cursor_up)
 set("n", "<C-l>", require("smart-splits").move_cursor_right)
 
-set("n", "<leader>gno", function()
+set("n", "<leader>g0", function()
   local sha = require("agitator").git_blame_commit_for_line()
   local commit_view = require("neogit.buffers.commit_view").new(sha)
   --- @diagnostic disable-next-line: missing-parameter
   commit_view:open()
 end, { desc = "Open commit for this line" })
 
--- set("n", "<leader>gc", function()
---   LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
--- end, { desc = "Lazygit Commit Log" })
+set("n", "<leader>gc", function()
+  LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
+end, { desc = "Lazygit Commit Log" })
 
 set("v", "<leader>y", function()
   local filetype = vim.bo.filetype
