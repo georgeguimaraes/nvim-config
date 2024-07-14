@@ -34,11 +34,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      window = {
-        border = "single",
-        winblend = 10,
-        margin = { 1, 0, 2, 0 },
-      },
+      preset = "modern",
     },
   },
 }

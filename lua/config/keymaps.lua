@@ -13,7 +13,7 @@ set("n", "<leader>wo", "<cmd>only<cr>", { desc = "Focus window" })
 set("n", "<leader>wq", "<cmd>q<cr>", { desc = "Quit window" })
 
 local wk = require("which-key")
-wk.register({ ["<leader>cj"] = { name = "Code Split/Join" } })
+wk.add({ "<leader>cj", group = "Code Split/Join" })
 set("n", "<leader>cjm", "<cmd>TSJToggle<CR>", { desc = "Split/Join code block with autodetect" })
 set("n", "<leader>cjj", "<cmd>TSJJoin<CR>", { desc = "Join code block" })
 set("n", "<leader>cjs", "<cmd>TSJSplit<CR>", { desc = "Split code block" })
