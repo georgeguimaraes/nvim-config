@@ -45,6 +45,9 @@ return {
       buffers = {
         set_filetype = true,
       },
+      verbose = {
+        no_code_found = false,
+      },
     },
   },
   -- {
