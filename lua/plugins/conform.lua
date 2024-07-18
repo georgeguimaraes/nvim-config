@@ -1,10 +1,10 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      format = {
-        async = true,
-      },
-    },
-  },
+  -- {
+  --   "stevearc/conform.nvim",
+  --   opts = {
+  --     format = {
+  --       async = true,
+  --     },
+  --   },
+  -- },
 }
