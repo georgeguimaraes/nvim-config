@@ -30,6 +30,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "ltex-ls", -- needs brew install openjdk && brew link --force openjdk
         "vale-ls",
+        "harper-ls",
       })
     end,
   },
@@ -51,8 +52,8 @@ return {
     },
   },
   -- {
-  --   "barreiroleo/ltex_extra.nvim",
   --   ft = { "markdown", "tex" },
+  --   "barreiroleo/ltex_extra.nvim",
   --   dependencies = { "neovim/nvim-lspconfig" },
   --   opts = {},
   -- },
@@ -60,7 +61,31 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ltex = {},
+        harper_ls = {
+          settings = {
+            ["harper-ls"] = {
+              userDictPath = "~/.config/harper/dict.txt",
+              codeActions = {
+                forceStable = true,
+              },
+              linters = {
+                spell_check = true,
+                spelled_numbers = false,
+                an_a = true,
+                sentence_capitalization = true,
+                unclosed_quotes = true,
+                wrong_quotes = false,
+                long_sentences = true,
+                repeated_words = true,
+                spaces = true,
+                matcher = true,
+                correct_number_suffix = true,
+                number_suffix_capitalization = true,
+                multiple_sequential_pronouns = true,
+              },
+            },
+          },
+        },
       },
     },
   },
