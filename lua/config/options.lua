@@ -13,4 +13,6 @@ if vim.g.neovide then
   vim.g.neovide_remember_window_size = true
 end
 
-vim.g.python3_host_prog=vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+
+vim.g.lazyvim_ruby_lsp = "solargraph"
