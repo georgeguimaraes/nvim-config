@@ -23,7 +23,8 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   dev = {
-    path = "~/code/neovim",
+    path = "~/code",
+    -- patterns = { "LazyVim" },
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
