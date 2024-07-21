@@ -16,6 +16,7 @@
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.elixir",
+    "lazyvim.plugins.extras.lang.erlang",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
@@ -28,6 +29,7 @@
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.mini-animate",
+    "lazyvim.plugins.extras.ui.mini-indentscope",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
@@ -35,7 +37,7 @@
     "lazyvim.plugins.extras.util.project"
   ],
   "news": {
-    "NEWS.md": "6077"
+    "NEWS.md": "6296"
   },
   "version": 6
 }
