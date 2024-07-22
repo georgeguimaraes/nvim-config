@@ -5,7 +5,6 @@ return {
     opts = {
       linters_by_ft = {
         -- ["*"] = { "codespell" },
-        markdown = { "markdownlint" },
       },
       linters = {
         codespell = {
