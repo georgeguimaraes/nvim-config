@@ -28,7 +28,6 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "ltex-ls", -- needs brew install openjdk && brew link --force openjdk
         "vale-ls",
         "harper-ls",
       })
@@ -51,12 +50,6 @@ return {
       },
     },
   },
-  -- {
-  --   ft = { "markdown", "tex" },
-  --   "barreiroleo/ltex_extra.nvim",
-  --   dependencies = { "neovim/nvim-lspconfig" },
-  --   opts = {},
-  -- },
   {
     "neovim/nvim-lspconfig",
     opts = {
