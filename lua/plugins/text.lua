@@ -1,20 +1,5 @@
 return {
   {
-    "mfussenegger/nvim-lint",
-    optional = true,
-    opts = {
-      linters_by_ft = {
-        ["*"] = { "codespell" },
-      },
-      linters = {
-        codespell = {
-          cmd = "codespell",
-          args = { "--ignore-words", "~/.config/codespell/ignore-words.txt" },
-        },
-      },
-    },
-  },
-  {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
