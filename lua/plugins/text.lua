@@ -10,7 +10,7 @@ return {
   },
   {
     "jmbuhr/otter.nvim",
-    event = "BufEnter",
+    event = "LazyFile",
     dependencies = {
       "hrsh7th/nvim-cmp",
       "neovim/nvim-lspconfig",
@@ -40,7 +40,7 @@ return {
                 spell_check = true,
                 spelled_numbers = false,
                 an_a = true,
-                sentence_capitalization = true,
+                sentence_capitalization = false,
                 unclosed_quotes = true,
                 wrong_quotes = false,
                 long_sentences = true,

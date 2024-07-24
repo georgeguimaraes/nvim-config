@@ -1,7 +1,7 @@
 return {
   {
     "sustech-data/wildfire.nvim",
-    event = "BufEnter",
+    event = "LazyFile",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {
       {
