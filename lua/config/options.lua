@@ -16,5 +16,3 @@ end
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
 
 vim.g.lazyvim_ruby_lsp = "solargraph"
-
-vim.treesitter.language.register("markdown", "livebook")
