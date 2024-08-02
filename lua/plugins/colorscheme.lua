@@ -1,20 +1,4 @@
 return {
-  -- {
-  --   "AlexvZyl/nordic.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("nordic").load()
-  --   end,
-  -- },
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("nightfox").load()
-  --   end,
-  -- },
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
@@ -28,10 +12,4 @@ return {
       })
     end,
   },
-  -- {
-  --   "binhtran432k/dracula.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
 }

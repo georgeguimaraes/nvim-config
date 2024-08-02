@@ -12,11 +12,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "echasnovski/mini.bracketed",
-  --   version = false,
-  --   event = "VeryLazy",
-  -- },
   {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
