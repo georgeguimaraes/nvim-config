@@ -24,7 +24,7 @@ require("lazy").setup({
   },
   dev = {
     path = "~/code",
-    patterns = { "LazyVim", "nvim-lint", "nvim-treesitter/nvim-treesitter.nvim" },
+    patterns = { "LazyVim" },
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
