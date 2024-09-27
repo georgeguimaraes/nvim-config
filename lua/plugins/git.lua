@@ -148,11 +148,4 @@ return {
       { "<leader>gW", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
     },
   },
-  {
-    "FabijanZulj/blame.nvim",
-    event = "VeryLazy",
-    cmd = "BlameToggle",
-    opts = {},
-    keys = { "<leader>gz", "<cmd>BlameToggle<cr>", desc = "Blame Toggle" },
-  },
 }

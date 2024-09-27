@@ -4,8 +4,6 @@
 --
 local set = vim.keymap.set
 
-set("n", "<A-S-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer in tabline" })
-set("n", "<A-S-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer in tabline" })
 set("n", "<leader>;", "<cmd>e#<cr>", { desc = "Last Buffer" })
 
 set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
@@ -25,14 +23,17 @@ set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Find File
 set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files, incl hidden (root dir)" })
 set("n", "<leader>/", "<cmd>Telescope live_grep_args<cr>", { desc = "Live Grep (args)" })
 
-set("n", "<C-A-h>", require("smart-splits").resize_left)
-set("n", "<C-A-j>", require("smart-splits").resize_down)
-set("n", "<C-A-k>", require("smart-splits").resize_up)
-set("n", "<C-A-l>", require("smart-splits").resize_right)
+set("n", "<C-S-h>", require("smart-splits").resize_left)
+set("n", "<C-S-j>", require("smart-splits").resize_down)
+set("n", "<C-S-k>", require("smart-splits").resize_up)
+set("n", "<C-S-l>", require("smart-splits").resize_right)
 set("n", "<C-h>", require("smart-splits").move_cursor_left)
 set("n", "<C-j>", require("smart-splits").move_cursor_down)
 set("n", "<C-k>", require("smart-splits").move_cursor_up)
 set("n", "<C-l>", require("smart-splits").move_cursor_right)
+set("n", "<leader>wr", function()
+  require("smart-splits").start_resize_mode()
+end, { desc = "Resize window mode" })
 
 set("n", "<leader>g0", function()
   local sha = require("agitator").git_blame_commit_for_line()
