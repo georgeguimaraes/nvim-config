@@ -59,13 +59,6 @@ return {
     },
   },
   {
-    "kawre/neotab.nvim",
-    event = "InsertEnter",
-    opts = {
-      tabkey = "",
-    },
-  },
-  {
     "smjonas/inc-rename.nvim",
     event = "VeryLazy",
     opts = {},
@@ -88,6 +81,7 @@ return {
     },
   },
   {
+    -- jump using % to the other end of a treesitter node
     "yorickpeterse/nvim-tree-pairs",
     event = "VeryLazy",
     opts = {},
