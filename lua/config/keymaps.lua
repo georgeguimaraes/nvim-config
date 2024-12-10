@@ -67,4 +67,10 @@ set("v", "<leader>y", function()
   vim.fn.setreg("+", cmd.stdout)
 end, { desc = "Yank as RTF", noremap = true, silent = true })
 
+if vim.fn.executable("lazydocker") == 1 then
+  vim.keymap.set("n", "<leader>kk", function()
+    LazyVim.terminal("lazydocker", { esc_esc = false, ctrl_hjkl = false })
+  end, { desc = "Lazydocker" })
+end
+
 vim.api.nvim_create_user_command("W", "write", {})
