@@ -16,36 +16,36 @@ return {
       log_to_file = "/tmp/neotree.lazyvim.log",
     },
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      {
-        "nvim-telescope/telescope-live-grep-args.nvim",
-        config = function()
-          LazyVim.on_load("telescope.nvim", function()
-            require("telescope").load_extension("live_grep_args")
-          end)
-        end,
-      },
-    },
-    opts = function(_, opts)
-      local lga_actions = require("telescope-live-grep-args.actions")
-      opts.pickers = {
-        find_files = {
-          hidden = true,
-          file_ignore_patterns = { ".git/" },
-        },
-      }
-      opts.defaults = {
-        mappings = {
-          i = {
-            ["<C-P>"] = lga_actions.quote_prompt(),
-            ["<C-O>"] = lga_actions.quote_prompt({ postfix = " --iglob **/" }),
-          },
-        },
-      }
-    end,
-  },
+  -- {
+  -- "nvim-telescope/telescope.nvim",
+  -- dependencies = {
+  --   {
+  --     "nvim-telescope/telescope-live-grep-args.nvim",
+  --     config = function()
+  --       LazyVim.on_load("telescope.nvim", function()
+  --         require("telescope").load_extension("live_grep_args")
+  --       end)
+  --     end,
+  --   },
+  -- },
+  -- opts = function(_, opts)
+  --   local lga_actions = require("telescope-live-grep-args.actions")
+  --   opts.pickers = {
+  --     find_files = {
+  --       hidden = true,
+  --       file_ignore_patterns = { ".git/" },
+  --     },
+  --   }
+  --   opts.defaults = {
+  --     mappings = {
+  --       i = {
+  --         ["<C-P>"] = lga_actions.quote_prompt(),
+  --         ["<C-O>"] = lga_actions.quote_prompt({ postfix = " --iglob **/" }),
+  --       },
+  --     },
+  --   }
+  -- end,
+  -- },
   {
     "otavioschwanck/arrow.nvim",
     opts = {
@@ -104,10 +104,5 @@ return {
       end,
     },
     event = "VeryLazy",
-  },
-  {
-    "pteroctopus/faster.nvim",
-    lazy = false,
-    opts = {},
   },
 }
