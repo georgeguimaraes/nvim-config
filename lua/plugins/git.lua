@@ -1,6 +1,7 @@
 return {
   {
     "emmanueltouzery/agitator.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
     keys = {
       {
@@ -59,7 +60,6 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
       "sindrets/diffview.nvim", -- optional
-      "nvim-telescope/telescope.nvim", -- optional
     },
     cmd = "Neogit",
     keys = {
