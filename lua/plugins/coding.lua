@@ -12,30 +12,30 @@ return {
       })
     end,
   },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      local bordered = {
-        border = "rounded",
-        winhighlight = "FloatBorder:IndentBlanklineChar,Normal:Normal",
-        zindex = 1001,
-        scrolloff = 0,
-        col_offset = 0,
-        side_padding = 1,
-        scrollbar = true,
-      }
-      opts.window = {
-        completion = bordered,
-        documentation = bordered,
-      }
-
-      opts.view = {
-        entries = {
-          follow_cursor = true,
-        },
-      }
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   opts = function(_, opts)
+  --     local bordered = {
+  --       border = "rounded",
+  --       winhighlight = "FloatBorder:IndentBlanklineChar,Normal:Normal",
+  --       zindex = 1001,
+  --       scrolloff = 0,
+  --       col_offset = 0,
+  --       side_padding = 1,
+  --       scrollbar = true,
+  --     }
+  --     opts.window = {
+  --       completion = bordered,
+  --       documentation = bordered,
+  --     }
+  --
+  --     opts.view = {
+  --       entries = {
+  --         follow_cursor = true,
+  --       },
+  --     }
+  --   end,
+  -- },
   {
     "Wansmer/sibling-swap.nvim",
     dependencies = { "nvim-treesitter" },
