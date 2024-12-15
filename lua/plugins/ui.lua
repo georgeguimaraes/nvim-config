@@ -16,6 +16,22 @@ return {
     },
   },
   {
+    "saghen/blink.cmp",
+    opts = {
+      completion = {
+        menu = {
+          border = "rounded",
+          winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+        },
+        documentation = {
+          window = {
+            border = "rounded",
+          },
+        },
+      },
+    },
+  },
+  {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
@@ -37,12 +53,6 @@ return {
       },
     },
   },
-  -- {
-  --   "folke/which-key.nvim",
-  --   opts = {
-  --     preset = "modern",
-  --   },
-  -- },
   {
     "sphamba/smear-cursor.nvim",
     opts = {
