@@ -17,6 +17,6 @@
 
 vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
 
-require("tokyonight").setup({
-  plugins = { markdown = true },
-})
+-- require("tokyonight").setup({
+--   plugins = { markdown = true },
+-- })
