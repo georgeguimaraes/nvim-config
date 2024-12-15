@@ -2,8 +2,9 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    -- we want to use head for now, since the releases are not frequent
-    version = false,
+    dependencies = {
+      "stevearc/dressing.nvim",
+    },
     opts = {
       hints = { enabled = false },
     },
