@@ -1,5 +1,26 @@
 return {
   {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "enter",
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_forwad", "fallback" },
+      },
+      completion = {
+        menu = {
+          border = "rounded",
+          winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+        },
+        documentation = {
+          window = {
+            border = "rounded",
+          },
+        },
+      },
+    },
+  },
+  {
     "Wansmer/treesj",
     event = "VeryLazy",
     requires = { "nvim-treesitter" },
@@ -12,30 +33,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   opts = function(_, opts)
-  --     local bordered = {
-  --       border = "rounded",
-  --       winhighlight = "FloatBorder:IndentBlanklineChar,Normal:Normal",
-  --       zindex = 1001,
-  --       scrolloff = 0,
-  --       col_offset = 0,
-  --       side_padding = 1,
-  --       scrollbar = true,
-  --     }
-  --     opts.window = {
-  --       completion = bordered,
-  --       documentation = bordered,
-  --     }
-  --
-  --     opts.view = {
-  --       entries = {
-  --         follow_cursor = true,
-  --       },
-  --     }
-  --   end,
-  -- },
   {
     "Wansmer/sibling-swap.nvim",
     dependencies = { "nvim-treesitter" },
@@ -81,7 +78,7 @@ return {
     },
   },
   {
-    -- jump using % to the other end of a treesitter node
+    -- jmp using % to the other end of a treesitter node
     "yorickpeterse/nvim-tree-pairs",
     event = "VeryLazy",
     opts = {},
