@@ -69,4 +69,10 @@ if vim.fn.executable("lazydocker") == 1 then
   end, { desc = "Lazydocker" })
 end
 
+if vim.fn.executable("aider") == 1 then
+  vim.keymap.set("n", "<leader>ai", function()
+    Snacks.terminal("aider", { esc_esc = false, ctrl_hjkl = false })
+  end, { desc = "aider.chat" })
+end
+
 vim.api.nvim_create_user_command("W", "write", {})
