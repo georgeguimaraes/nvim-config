@@ -23,11 +23,13 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     lazy = false,
-    opts = {
-      keymaps = {
-        useDefault = true,
-      },
-    },
+    config = function()
+      require("various-textobjs").setup({
+        keymaps = {
+          useDefaults = true,
+        },
+      })
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
