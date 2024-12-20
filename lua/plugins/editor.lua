@@ -1,5 +1,24 @@
 return {
   {
+    "ibhagwan/fzf-lua",
+    opts = {
+      oldfiles = {
+        include_current_session = true,
+      },
+      previewers = {
+        builtin = {
+          syntax_limit_b = 1024 * 1024,
+        },
+      },
+      grep = {
+        -- ex: > text -- */plugins/*
+        rg_glob = true, -- enable glob parsing
+        glob_flag = "--iglob", -- case insensitive globs
+        glob_separator = "%s%-%-", -- query separator pattern (lua): ' --'
+      },
+    },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     version = false,
     branch = "main",
