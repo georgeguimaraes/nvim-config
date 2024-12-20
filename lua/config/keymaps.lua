@@ -65,7 +65,7 @@ end, { desc = "Yank as RTF", noremap = true, silent = true })
 
 if vim.fn.executable("lazydocker") == 1 then
   vim.keymap.set("n", "<leader>kk", function()
-    Snacks.terminal("lazydocker", { esc_esc = false, ctrl_hjkl = false })
+    Snacks.terminal("lazydocker")
   end, { desc = "Lazydocker" })
 end
 
