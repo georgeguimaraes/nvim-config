@@ -125,4 +125,41 @@ return {
       },
     },
   },
+  {
+    "chrisgrieser/nvim-spider",
+    keys = {
+      {
+        "e",
+        "<>lua require('spider').motion('e')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "w",
+        "<cmd>lua require('spider').motion('w')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "b",
+        "<cmd>lua require('spider').motion('b')<CR>",
+        mode = { "n", "o", "x" },
+      },
+    },
+    opts = {},
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    lazy = false,
+    opts = {
+      keymaps = {
+        useDefaults = true,
+        disabledDefaults = { "iN", "aN", "iy", "ay", "gw", "gW", "!", "io", "ao", "iq", "aq" },
+      },
+    },
+    keys = {
+      { "ae", "aw", mode = { "o" } },
+      { "ie", "iw", mode = { "o" } },
+      { "aw", '<cmd>lua require("various-textobjs").subword("outer")<CR>', mode = { "o", "x" } },
+      { "iw", '<cmd>lua require("various-textobjs").subword("inner")<CR>', mode = { "o", "x" } },
+    },
+  },
 }

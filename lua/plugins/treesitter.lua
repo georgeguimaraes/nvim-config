@@ -21,17 +21,6 @@ return {
     },
   },
   {
-    "chrisgrieser/nvim-various-textobjs",
-    lazy = false,
-    config = function()
-      require("various-textobjs").setup({
-        keymaps = {
-          useDefaults = true,
-        },
-      })
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       incremental_selection = { enable = false },
