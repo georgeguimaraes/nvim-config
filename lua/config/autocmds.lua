@@ -3,20 +3,9 @@
 -- Add any additional autocmds here
 --
 
--- local group = vim.api.nvim_create_augroup("Elixir", { clear = true })
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
---   pattern = "*.ex,*.exs",
---   group = group,
---   callback = function()
---     local ok, otter = pcall(require, "otter")
---     if ok then
---       otter.activate({ "markdown" })
---     end
---   end,
--- })
-
 vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
 
--- require("tokyonight").setup({
---   plugins = { markdown = true },
--- })
+vim.cmd([[
+  autocmd FileType elixir setlocal indentkeys-=0\|>
+  autocmd FileType elixir setlocal indentkeys-=\|>
+]])
