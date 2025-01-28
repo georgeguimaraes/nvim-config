@@ -1,4 +1,5 @@
 return {
+  { "kosayoda/nvim-lightbulb", config = true },
   {
     "saghen/blink.cmp",
     dependencies = {
