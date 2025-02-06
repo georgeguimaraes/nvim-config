@@ -131,7 +131,7 @@ return {
     keys = {
       {
         "e",
-        "<>lua require('spider').motion('e')<CR>",
+        "<cmd>lua require('spider').motion('e')<CR>",
         mode = { "n", "o", "x" },
       },
       {
