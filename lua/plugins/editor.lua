@@ -2,24 +2,21 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
-      picker = { sources = { files = { hidden = true } } },
-    },
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    version = false,
-    branch = "main",
-    opts = {
-      filesystem = {
-        follow_current_file = {
-          enabled = true,
+      picker = {
+        formatters = {
+          file = {
+            truncate = 70,
+          },
+        },
+        sources = {
+          files = { hidden = true },
+          explorer = {
+            layout = {
+              auto_hide = { "input" },
+            },
+          },
         },
       },
-      window = {
-        width = 40,
-      },
-      log_level = "debug",
-      log_to_file = "/tmp/neotree.lazyvim.log",
     },
   },
   {

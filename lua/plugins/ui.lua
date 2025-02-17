@@ -40,7 +40,7 @@ return {
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-            { icon = " ", key = "e", desc = "Browse File", action = ":Neotree" },
+            { icon = " ", key = "e", desc = "Browse File", action = ":lua Snacks.explorer()" },
             { icon = " ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('grep')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
             { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
