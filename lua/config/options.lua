@@ -20,3 +20,5 @@ vim.g.lazyvim_ruby_lsp = "solargraph"
 vim.g.lazyvim_blink_main = true
 
 vim.opt.iskeyword:append("-")
+
+vim.g.ai_cmp = false

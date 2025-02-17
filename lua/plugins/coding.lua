@@ -21,11 +21,11 @@ return {
           },
         },
       },
-      keymap = {
-        preset = "enter",
-        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "snippet_forward", "fallback" },
-      },
+      -- keymap = {
+      --   preset = "enter",
+      --   ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+      --   ["<S-Tab>"] = { "select_prev", "snippet_forward", "fallback" },
+      -- },
       completion = {
         menu = {
           draw = {
