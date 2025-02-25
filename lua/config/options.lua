@@ -3,7 +3,6 @@
 -- Add any additional options here
 --
 
-vim.opt.scrolloff = 2
 vim.opt.swapfile = false
 vim.g.deprecation_warnings = false
 vim.opt.relativenumber = false
@@ -16,8 +15,6 @@ end
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
 
 vim.g.lazyvim_ruby_lsp = "solargraph"
-
-vim.g.lazyvim_blink_main = true
 
 vim.opt.iskeyword:append("-")
 
