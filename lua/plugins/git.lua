@@ -9,7 +9,7 @@ return {
         function()
           require("agitator").git_blame_toggle()
         end,
-        desc = "Git Blame",
+        desc = "Git Blame Panel",
       },
       {
         "<leader>gO",
