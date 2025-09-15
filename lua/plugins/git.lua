@@ -65,7 +65,7 @@ return {
     keys = {
       { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit" },
       {
-        "<leader>gl",
+        "<leader>gv",
         function()
           local file = vim.fn.expand("%")
           vim.cmd([[execute "normal! \<ESC>"]])
@@ -77,7 +77,7 @@ return {
         mode = "v",
       },
       {
-        "<leader>gl",
+        "<leader>gv",
         function()
           local file = vim.fn.expand("%")
           require("neogit").action("log", "log_current", { "--", file })()
