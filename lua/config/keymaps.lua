@@ -59,3 +59,11 @@ if vim.fn.executable("lazydocker") == 1 then
 end
 
 vim.api.nvim_create_user_command("W", "write", {})
+
+set({ "n", "x" }, "<cr>", function()
+  vim.lsp.buf.selection_range(vim.v.count1)
+end, { desc = "LSP Select Outer" })
+
+set({ "n", "x" }, "<bs>", function()
+  vim.lsp.buf.selection_range(-vim.v.count1)
+end, { desc = "LSP Select Inner" })
