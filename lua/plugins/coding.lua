@@ -2,30 +2,7 @@ return {
   { "kosayoda/nvim-lightbulb", config = true },
   {
     "saghen/blink.cmp",
-    dependencies = {
-      "mikavilpas/blink-ripgrep.nvim",
-    },
     opts = {
-      sources = {
-        default = { "ripgrep" },
-        providers = {
-          ripgrep = {
-            module = "blink-ripgrep",
-            name = "Ripgrep",
-            opts = {
-              prefix_min_len = 5,
-              context_size = 5,
-              max_filesize = "1M",
-              additional_rg_options = {},
-            },
-          },
-        },
-      },
-      -- keymap = {
-      --   preset = "enter",
-      --   ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-      --   ["<S-Tab>"] = { "select_prev", "snippet_forward", "fallback" },
-      -- },
       completion = {
         menu = {
           draw = {
