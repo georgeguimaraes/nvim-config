@@ -87,13 +87,13 @@ return {
     opts = {},
   },
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     version = false,
     event = "VeryLazy",
     opts = {},
   },
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     opts = {
       mappings = {
         around_next = "",
