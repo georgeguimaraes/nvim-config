@@ -30,13 +30,14 @@
     "lazyvim.plugins.extras.ui.mini-indentscope",
     "lazyvim.plugins.extras.ui.smear-cursor",
     "lazyvim.plugins.extras.ui.treesitter-context",
+    "lazyvim.plugins.extras.ui.treesitter-main",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.octo",
     "lazyvim.plugins.extras.util.project"
   ],
   "news": {
-    "NEWS.md": "11341"
+    "NEWS.md": "11499"
   },
   "version": 8
 }
