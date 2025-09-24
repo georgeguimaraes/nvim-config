@@ -9,8 +9,6 @@ vim.opt.relativenumber = false
 
 vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
 
-vim.g.lazyvim_ruby_lsp = "solargraph"
-
 vim.opt.iskeyword:append("-")
 
 vim.g.ai_cmp = false
