@@ -1,7 +1,7 @@
 {
   "LazyVim": { "branch": "main", "commit": "94c4603b6838fbe75343b6e3342b4343744157dc" },
   "SchemaStore.nvim": { "branch": "main", "commit": "7d0a0b914437bfefcb17d0a7f83d9f2147cc2d28" },
-  "agitator.nvim": { "branch": "main", "commit": "36abea264878b57d1cce615df5b74e667fea0818" },
+  "agitator.nvim": { "branch": "main", "commit": "9f3c071cf5397548a727166170a4f87087d6f99d" },
   "arrow.nvim": { "branch": "master", "commit": "6e0f726f55f99332dd726a53effd6813786b6d49" },
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
@@ -71,7 +71,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "2064980580af7f00385859b6344c6a4737383257" },
   "rustaceanvim": { "branch": "master", "commit": "25de2236be57cb061854bcaaf3de6707530ab792" },
   "sibling-swap.nvim": { "branch": "main", "commit": "75e696c340429769aa34d0bbae1511c8d9660c0b" },
-  "sidekick.nvim": { "branch": "main", "commit": "cb8485afa3be2221f06c66abcebff053572c2644" },
+  "sidekick.nvim": { "branch": "main", "commit": "c236b389819a3a11ada7234cd2a7a1be358b0785" },
   "smear-cursor.nvim": { "branch": "main", "commit": "abfa5835920b1d76c0e24e1465a618ad914be90a" },
   "snacks.nvim": { "branch": "main", "commit": "dae80fb393f712bd7352a20f9185f5e16b69f20f" },
   "telescope-terraform-doc.nvim": { "branch": "main", "commit": "877339c221617dbdbbddcfddea888913fd21057b" },
