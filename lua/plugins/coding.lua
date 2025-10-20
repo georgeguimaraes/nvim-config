@@ -45,13 +45,13 @@ return {
     },
     keys = {
       {
-        "<C-.>",
+        "<M-.>",
         function(_)
           require("sibling-swap").swap_with_right_with_opp()
         end,
       },
       {
-        "<C-,>",
+        "<M-,>",
         function(_)
           require("sibling-swap").swap_with_left_with_opp()()
         end,
