@@ -165,8 +165,8 @@ return {
     opts = {
       keymaps = {
         useDefaults = true,
-        -- Disable conflicting defaults
-        disabledDefaults = { "iN", "aN", "iy", "ay", "gw", "gW", "!", "io", "ao", "iq", "aq" },
+        -- Disable conflicting defaults (mini.ai provides better brackets/quotes/arguments)
+        disabledDefaults = { "iN", "aN", "iy", "ay", "gw", "gW", "!", "io", "ao", "iq", "aq", "i,", "a," },
       },
     },
     keys = {
