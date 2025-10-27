@@ -28,7 +28,7 @@ set("n", "<leader>g0", function()
 end, { desc = "Open commit for this line" })
 
 set("n", "<leader>gc", function()
-  LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
+  Snacks.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
 end, { desc = "Lazygit Commit Log" })
 
 set("v", "<leader>y", function()
