@@ -61,9 +61,15 @@ end
 vim.api.nvim_create_user_command("W", "write", {})
 
 set({ "n", "x" }, "<cr>", function()
+  if vim.bo.filetype == "minifiles" then
+    return "<cr>"
+  end
   vim.lsp.buf.selection_range(vim.v.count1)
-end, { desc = "LSP Select Outer" })
+end, { desc = "LSP Select Outer", expr = true })
 
 set({ "n", "x" }, "<bs>", function()
+  if vim.bo.filetype == "minifiles" then
+    return "<bs>"
+  end
   vim.lsp.buf.selection_range(-vim.v.count1)
-end, { desc = "LSP Select Inner" })
+end, { desc = "LSP Select Inner", expr = true })
