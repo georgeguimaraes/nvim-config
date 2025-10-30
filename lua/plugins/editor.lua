@@ -1,7 +1,7 @@
 return {
   -- Bracket navigation for buffers, diagnostics, quickfix, etc.
   {
-    "echasnovski/mini.bracketed",
+    "nvim-mini/mini.bracketed",
     event = "VeryLazy",
     opts = {},
   },
