@@ -58,6 +58,10 @@ set({ "n", "x" }, "<cr>", function()
   if vim.bo.filetype == "minifiles" then
     return "<cr>"
   end
+  -- In terminal buffers, Enter goes to insert mode and sends Enter
+  if vim.bo.buftype == "terminal" then
+    return "i<cr>"
+  end
   vim.lsp.buf.selection_range(vim.v.count1)
 end, { desc = "LSP Select Outer", expr = true })
 
@@ -67,3 +71,6 @@ set({ "n", "x" }, "<bs>", function()
   end
   vim.lsp.buf.selection_range(-vim.v.count1)
 end, { desc = "LSP Select Inner", expr = true })
+
+-- Toggle maximize window in terminal mode (via Ctrl+M from WezTerm sending F14)
+set("t", "<F14>", "<C-q><leader>wmi", { desc = "Toggle maximize window", noremap = true })
