@@ -1,5 +1,26 @@
 return {
   {
+    "nvim-mini/mini.diff",
+    keys = {
+      {
+        "<leader>gha",
+        function()
+          return require("mini.diff").operator("apply") .. "gh"
+        end,
+        expr = true,
+        desc = "Stage hunk",
+      },
+      {
+        "<leader>ghr",
+        function()
+          return require("mini.diff").operator("reset") .. "gh"
+        end,
+        expr = true,
+        desc = "Reset hunk",
+      },
+    },
+  },
+  {
     "emmanueltouzery/agitator.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
