@@ -114,11 +114,6 @@ return {
           hidden = false,
         },
       },
-      signs = {
-        hunk = { "", "" },
-        item = { ">", "v" },
-        section = { ">", "v" },
-      },
     },
   },
   {
