@@ -61,26 +61,44 @@ return {
     keys = { "<leader>ga", "<cmd>GitCoAuthors<cr>", desc = "Add Co-Authors" },
   },
   {
-    "sindrets/diffview.nvim",
+    "esmuellert/codediff.nvim",
     event = "VeryLazy",
     keys = {
-      { "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview file history" },
-      { "<leader>gx", "<cmd>DiffviewOpen<cr>", desc = "Diffview index" },
-    },
-    opts = {
-      view = {
-        merge_tool = {
-          layout = "diff4_mixed",
-        },
+      { "<leader>gx", "<cmd>CodeDiff<cr>", desc = "CodeDiff (all changes)" },
+      {
+        "<leader>gD",
+        function()
+          -- Always diff against main/master (for pre-PR review)
+          local has_main = vim.fn.system("git rev-parse --verify origin/main 2>/dev/null"):gsub("%s+", "")
+          local base = has_main ~= "" and "origin/main" or "origin/master"
+          vim.cmd("CodeDiff ref " .. base .. " HEAD")
+        end,
+        desc = "Diff branch vs main/master",
+      },
+      {
+        "<leader>gd",
+        function()
+          -- Diff against upstream/parent (for stacked PRs)
+          local result = vim.fn.system("git rev-parse --abbrev-ref @{upstream} 2>&1")
+          local base = vim.trim(result)
+          if base == "" or base:match("fatal") or base:match("no upstream") then
+            vim.notify("No upstream branch set. Use <leader>gD to diff against main.", vim.log.levels.WARN)
+            return
+          end
+          vim.cmd("CodeDiff ref " .. base .. " HEAD")
+        end,
+        desc = "Diff branch vs upstream/parent",
       },
     },
+    config = function()
+      require("codediff").setup()
+    end,
   },
   {
     "NeogitOrg/neogit",
     event = "VeryLazy",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional
+      "nvim-lua/plenary.nvim",
     },
     cmd = "Neogit",
     keys = {
@@ -162,6 +180,14 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
     keys = {
       { "<leader>gW", "<cmd>GhBlameCurrentLine<cr>", desc = "GitHub PR Blame Current Line" },
+    },
+  },
+  {
+    "pwntester/octo.nvim",
+    opts = {
+      suppress_missing_scope = {
+        projects_v2 = true,
+      },
     },
   },
 }

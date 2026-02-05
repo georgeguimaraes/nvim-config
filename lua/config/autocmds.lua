@@ -10,6 +10,9 @@ vim.cmd([[
   autocmd FileType elixir setlocal indentkeys-=\|>
 ]])
 
+-- Remove underline from CursorLine (for diffnotes.nvim)
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2a2a2a", underline = false })
+
 -- Start Neovim RPC server for remote file opening (Phoenix LiveReload, etc.)
 -- Check if server is already running (v:servername is set when using --listen flag)
 if vim.v.servername == "" then
