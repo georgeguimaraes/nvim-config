@@ -99,6 +99,7 @@ return {
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "esmuellert/codediff.nvim",
     },
     cmd = "Neogit",
     keys = {
@@ -125,6 +126,7 @@ return {
       },
     },
     config = {
+      diff_viewer = "codediff",
       graph_style = "unicode",
       sections = {
         recent = {
