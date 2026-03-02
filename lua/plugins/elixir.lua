@@ -1,4 +1,19 @@
 return {
+  -- Hex.pm completions for mix.exs (package names, versions, options)
+  {
+    "saghen/blink.cmp",
+    dependencies = { "dbernheisel/hex-cmp" },
+    opts = {
+      sources = {
+        per_filetype = {
+          elixir = { inherit_defaults = true, "hex" },
+        },
+        providers = {
+          hex = { name = "hex", module = "hex_cmp", async = true },
+        },
+      },
+    },
+  },
   {
     "nvim-mini/mini.icons",
     opts = function(_)
