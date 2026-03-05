@@ -186,10 +186,25 @@ return {
   },
   {
     "pwntester/octo.nvim",
+    cmd = "Octo",
+    keys = {
+      { "<leader>rp", "<cmd>Octo pr list<cr>", desc = "List PRs" },
+      { "<leader>rP", "<cmd>Octo pr search<cr>", desc = "Search PRs" },
+      { "<leader>ri", "<cmd>Octo issue list<cr>", desc = "List Issues" },
+      { "<leader>rI", "<cmd>Octo issue search<cr>", desc = "Search Issues" },
+    },
     opts = {
       suppress_missing_scope = {
         projects_v2 = true,
       },
     },
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "octo",
+        callback = function(ev)
+          vim.keymap.set("n", "q", "<cmd>tabclose<cr>", { buffer = ev.buf, desc = "Close Octo tab" })
+        end,
+      })
+    end,
   },
 }
