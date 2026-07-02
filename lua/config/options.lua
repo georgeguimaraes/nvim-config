@@ -13,6 +13,9 @@ vim.opt.iskeyword:append("-")
 
 vim.g.ai_cmp = false
 
+-- use the experimental native TypeScript LSP (tsgo) instead of vtsls
+vim.g.lazyvim_ts_lsp = "tsgo"
+
 -- mini.diff highlight colors from delta (.gitconfig)
 vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { fg = "#399a96" })
 vim.api.nvim_set_hl(0, "MiniDiffSignChange", { fg = "#6183bb" })
