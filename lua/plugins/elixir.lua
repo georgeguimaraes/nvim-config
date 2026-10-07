@@ -20,23 +20,29 @@ return {
       vim.cmd([[highlight MiniIconsPurple guifg=#9660EE]])
     end,
   },
-  -- Replace elixir-ls with expert in mason
+  -- Replace elixir-ls with dexter in mason
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = vim.tbl_filter(function(pkg)
         return pkg ~= "elixir-ls"
       end, opts.ensure_installed or {})
-      table.insert(opts.ensure_installed, "expert")
+      table.insert(opts.ensure_installed, "dexter")
     end,
   },
-  -- Disable elixirls, enable expert
+  -- Disable elixirls and expert, enable dexter
   {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
         elixirls = { enabled = false },
-        expert = {},
+        expert = { enabled = false },
+        -- dexter uses its cwd as the project root (and for asdf stdlib detection), not rootUri
+        dexter = {
+          cmd = function(dispatchers, config)
+            return vim.lsp.rpc.start({ "dexter", "lsp" }, dispatchers, { cwd = config.root_dir })
+          end,
+        },
       },
     },
   },
