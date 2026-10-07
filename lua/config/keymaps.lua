@@ -62,15 +62,30 @@ set({ "n", "x" }, "<cr>", function()
   if vim.bo.buftype == "terminal" then
     return "i<cr>"
   end
-  vim.lsp.buf.selection_range(vim.v.count1)
-end, { desc = "LSP Select Outer", expr = true })
+  return vim.fn.mode() == "n" and "v<Plug>(select-outer)" or "<Plug>(select-outer)"
+end, { desc = "Select Outer Node", expr = true, remap = true })
 
-set({ "n", "x" }, "<bs>", function()
-  if vim.bo.filetype == "minifiles" then
-    return "<bs>"
+-- same as the native an/in (0.12), which various-textobjs overrides with its number textobj
+local function select_node(count)
+  if vim.treesitter.get_parser(nil, nil, { error = false }) then
+    local select = require("vim.treesitter._select")
+    if count > 0 then
+      select.select_parent(count)
+    else
+      select.select_child(-count)
+    end
+  else
+    vim.lsp.buf.selection_range(count)
   end
-  vim.lsp.buf.selection_range(-vim.v.count1)
-end, { desc = "LSP Select Inner", expr = true })
+end
+
+set("x", "<Plug>(select-outer)", function()
+  select_node(vim.v.count1)
+end)
+
+set("x", "<bs>", function()
+  select_node(-vim.v.count1)
+end, { desc = "Select Inner Node" })
 
 -- Toggle maximize window in terminal mode (via Ctrl+M from WezTerm sending F14)
 set("t", "<F14>", "<C-q><leader>wmi", { desc = "Toggle maximize window", noremap = true })
