@@ -140,7 +140,7 @@ return {
   },
 
   -- Smarter word motions that respect camelCase and snake_case
-  -- Result: w/b/e skip subwords (camelCase → next word, not next capital)
+  -- Result: w/b/e stop at each subword (fooBarBaz → Bar → Baz, call_some_thing → some → thing)
   {
     "chrisgrieser/nvim-spider",
     keys = {
