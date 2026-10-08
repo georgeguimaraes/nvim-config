@@ -131,7 +131,22 @@ return {
         around_last = "",
         inside_last = "",
       })
-      opts.custom_textobjects.w = opts.custom_textobjects.e
+      -- subwords split like spider: HTTP|Server, MAX|SIZE, user|2|Id, snake|case
+      opts.custom_textobjects.w = function()
+        local regions, cur = {}, vim.fn.line(".")
+        for lnum = math.max(1, cur - 50), math.min(vim.fn.line("$"), cur + 50) do
+          local line, start = vim.fn.getline(lnum), 0
+          while true do
+            local _, from, to = unpack(vim.fn.matchstrpos(line, [[\v\u+\ze\u\l|\u\l+|\u+|\l+|\d+]], start))
+            if from < 0 then
+              break
+            end
+            table.insert(regions, { from = { line = lnum, col = from + 1 }, to = { line = lnum, col = to } })
+            start = to
+          end
+        end
+        return regions
+      end
     end,
     keys = {
       { "ae", "aw", mode = { "o", "x" } },
