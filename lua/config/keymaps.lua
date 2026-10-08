@@ -79,12 +79,73 @@ local function select_node(count)
   end
 end
 
+-- selections <cr> expanded from, so <bs> can walk back to the exact original selection
+local selection_stack = {}
+
+local function get_selection()
+  return {
+    buf = vim.api.nvim_get_current_buf(),
+    tick = vim.b.changedtick,
+    mode = vim.fn.mode(),
+    from = vim.fn.getpos("v"),
+    to = vim.fn.getpos("."),
+  }
+end
+
+local function same_selection(a, b)
+  return a.buf == b.buf and a.tick == b.tick and a.mode == b.mode and vim.deep_equal(a.from, b.from) and vim.deep_equal(a.to, b.to)
+end
+
 set("x", "<Plug>(select-outer)", function()
+  local before = get_selection()
+  local top = selection_stack[#selection_stack]
+  if not (top and same_selection(top.after, before)) then
+    selection_stack = {}
+  end
   select_node(vim.v.count1)
+  local after = get_selection()
+  if not same_selection(before, after) then
+    table.insert(selection_stack, { before = before, after = after })
+  end
 end)
 
+local function restore_selection(sel)
+  vim.cmd("normal! \27")
+  vim.fn.setpos(".", sel.from)
+  vim.cmd("normal! " .. sel.mode)
+  vim.fn.setpos(".", sel.to)
+end
+
+local function selection_bounds(sel)
+  local a, b = { sel.from[2], sel.from[3] }, { sel.to[2], sel.to[3] }
+  if a[1] > b[1] or (a[1] == b[1] and a[2] > b[2]) then
+    return b, a
+  end
+  return a, b
+end
+
+local function pos_lt(a, b)
+  return a[1] < b[1] or (a[1] == b[1] and a[2] < b[2])
+end
+
 set("x", "<bs>", function()
-  select_node(-vim.v.count1)
+  local current = get_selection()
+  local top = selection_stack[#selection_stack]
+  if not (top and same_selection(top.after, current)) then
+    selection_stack = {}
+    select_node(-vim.v.count1)
+    -- the native child selection grows when the selection is smaller than a node
+    local s1, e1 = selection_bounds(current)
+    local s2, e2 = selection_bounds(get_selection())
+    if pos_lt(s2, s1) or pos_lt(e1, e2) then
+      restore_selection(current)
+    end
+    return
+  end
+  for _ = 2, math.min(vim.v.count1, #selection_stack) do
+    table.remove(selection_stack)
+  end
+  restore_selection(table.remove(selection_stack).before)
 end, { desc = "Select Inner Node" })
 
 -- Toggle maximize window in terminal mode (via Ctrl+M from WezTerm sending F14)
