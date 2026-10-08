@@ -65,7 +65,7 @@ set({ "n", "x" }, "<cr>", function()
   return vim.fn.mode() == "n" and "v<Plug>(select-outer)" or "<Plug>(select-outer)"
 end, { desc = "Select Outer Node", expr = true, remap = true })
 
--- same as the native an/in (0.12), which various-textobjs overrides with its number textobj
+-- same as the native an/in (0.12)
 local function select_node(count)
   if vim.treesitter.get_parser(nil, nil, { error = false }) then
     local select = require("vim.treesitter._select")

@@ -120,16 +120,22 @@ return {
   },
 
   -- Enhanced text objects (function args, quotes, brackets, etc.)
-  -- Result: Disables next/last navigation (an, in, al, il) to avoid conflicts
+  -- Result: Disables next/last navigation (an, in, al, il) so native an/in select treesitter nodes,
+  -- aw/iw work on subwords (camelCase/snake_case parts), ae/ie are the builtin word textobjects
   {
     "nvim-mini/mini.ai",
-    opts = {
-      mappings = {
+    opts = function(_, opts)
+      opts.mappings = vim.tbl_extend("force", opts.mappings or {}, {
         around_next = "",
         inside_next = "",
         around_last = "",
         inside_last = "",
-      },
+      })
+      opts.custom_textobjects.w = opts.custom_textobjects.e
+    end,
+    keys = {
+      { "ae", "aw", mode = { "o", "x" } },
+      { "ie", "iw", mode = { "o", "x" } },
     },
   },
 
@@ -155,27 +161,5 @@ return {
       },
     },
     opts = {},
-  },
-
-  -- Additional text objects (indentation, keys, values, numbers, etc.)
-  -- Result: Custom mappings - aw/iw for subwords, ae/ie fallback to word motions
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    lazy = false,
-    opts = {
-      keymaps = {
-        useDefaults = true,
-        -- Disable conflicting defaults (mini.ai provides better brackets/quotes/arguments)
-        disabledDefaults = { "iN", "aN", "iy", "ay", "gw", "gW", "!", "io", "ao", "iq", "aq", "i,", "a," },
-      },
-    },
-    keys = {
-      -- Fallback to word motions in operator-pending
-      { "ae", "aw", mode = { "o" } },
-      { "ie", "iw", mode = { "o" } },
-      -- Override aw/iw to work on subwords (camelCase/snake_case parts)
-      { "aw", '<cmd>lua require("various-textobjs").subword("outer")<CR>', mode = { "o", "x" } },
-      { "iw", '<cmd>lua require("various-textobjs").subword("inner")<CR>', mode = { "o", "x" } },
-    },
   },
 }
